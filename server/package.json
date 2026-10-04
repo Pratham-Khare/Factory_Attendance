@@ -1,0 +1,21 @@
+{
+  "name": "factory-attendance-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1",
+    "nodemailer": "^7.0.6",
+    "morgan": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "helmet": "^8.1.0",
+    "express-rate-limit": "^8.2.1"
+  }
+}

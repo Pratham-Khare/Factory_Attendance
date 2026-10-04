@@ -1,0 +1,15 @@
+import express from 'express';
+const { Router } = express;
+import { requireAdmin } from '../middleware/auth.js';
+import { listLeaves, createLeave, updateLeave, deleteLeave, listHolidays, createHoliday, deleteHoliday, employeeLeaveSummary } from '../controllers/leaveController.js';
+const router=Router();
+router.use(requireAdmin);
+router.get('/leaves',listLeaves);
+router.post('/leaves',createLeave);
+router.put('/leaves/:id',updateLeave);
+router.delete('/leaves/:id',deleteLeave);
+router.get('/leaves/employee/:employeeId/summary',employeeLeaveSummary);
+router.get('/holidays',listHolidays);
+router.post('/holidays',createHoliday);
+router.delete('/holidays/:id',deleteHoliday);
+export default router;
