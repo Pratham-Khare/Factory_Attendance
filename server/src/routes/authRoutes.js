@@ -1,0 +1,11 @@
+import express from 'express';
+const { Router } = express;
+import { login, attendanceLogin, setupStatus, createFirstAdmin, requestPasswordOtp, resetPasswordWithOtp } from '../controllers/authController.js';
+const router = Router();
+router.get('/setup-status', setupStatus);
+router.post('/setup', createFirstAdmin);
+router.post('/login', login);
+router.post('/attendance-login', attendanceLogin);
+router.post('/forgot-password/request-otp', requestPasswordOtp);
+router.post('/forgot-password/reset', resetPasswordWithOtp);
+export default router;

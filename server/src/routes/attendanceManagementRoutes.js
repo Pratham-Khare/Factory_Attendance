@@ -1,0 +1,10 @@
+import express from 'express';
+const { Router } = express;
+import { manageAttendance, saveManagedAttendance, attendanceAudit } from '../controllers/attendanceManagementController.js';
+import { requireAdmin } from '../middleware/auth.js';
+const router = Router();
+router.use(requireAdmin);
+router.get('/manage', manageAttendance);
+router.get('/audit', attendanceAudit);
+router.put('/manage/:employeeId', saveManagedAttendance);
+export default router;
